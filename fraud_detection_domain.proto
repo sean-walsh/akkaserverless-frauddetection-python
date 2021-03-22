@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package frauddetection.domain;
+
+message FraudDetectionCreated {
+  string customer_id = 1;
+  string rule_id = 2;
+  int32 max_amount_cents = 3;
+}
+
+message ScoredTransactionAdded {
+  string customer_id = 1;
+  string transaction_id = 2;
+  int64 timestamp = 3;
+  int32 amount_cents = 4;
+  bool potential_fraud = 5;
+  int32 risk_score = 6;
+  string rule_id = 7;
+}
+
+message FraudDetectionRuleUpdated {
+  string customerId = 1;
+  string rule_id = 2;
+  int32 max_amount_cents = 3;
+}

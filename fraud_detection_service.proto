@@ -1,0 +1,62 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "cloudstate/entity_key.proto";
+import "google/api/annotations.proto";
+
+import "fraud_detection_common.proto";
+
+package frauddetection;
+
+message CreateFraudDetectionCommand {
+    string customer_id = 1 [(.cloudstate.entity_key) = true];
+    string rule_id = 2;
+    int32 max_amount_cents = 3;
+}
+
+message AddTransactionCommand {
+    string customer_id = 1 [(.cloudstate.entity_key) = true];
+    string transaction_id = 2;
+    int64 timestamp = 3;
+    int32 amount_cents = 4;
+}
+
+message GetFraudDetectionCommand {
+    string customer_id = 1 [(.cloudstate.entity_key) = true];
+}
+
+message UpdateFraudDetectionRuleCommand {
+    string customer_id = 1 [(.cloudstate.entity_key) = true];
+    string rule_id = 2;
+    int32 max_amount_cents = 3;
+}
+
+service FraudDetectionService {
+    rpc CreateFraudDetection(CreateFraudDetectionCommand) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/fraud-detections/{customer_id}",
+            body: "*",
+        };
+    };
+
+    rpc UpdateFraudDetectionRule(UpdateFraudDetectionRuleCommand) returns (google.protobuf.Empty){
+        option (google.api.http) = {
+            post: "/fraud-detections/{customer_id}/rule",
+            body: "*",
+        };
+    };
+    
+    rpc AddTransaction(AddTransactionCommand) returns (ScoredTransactionState) {
+        option (google.api.http) = {
+            post: "/fraud-detections/{customer_id}/transaction",
+            body: "*",
+        };
+    };
+
+    rpc GetFraudDetection(GetFraudDetectionCommand) returns (FraudDetectionState) {
+        option (google.api.http) = {
+            get: "/fraud-detections/{customer_id}"
+        };
+    };
+}
