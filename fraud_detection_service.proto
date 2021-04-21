@@ -35,28 +35,28 @@ message UpdateFraudDetectionRuleCommand {
 service FraudDetectionService {
     rpc CreateFraudDetection(CreateFraudDetectionCommand) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-            post: "/fraud-detections/{customer_id}",
+            post: "/fraud-detection/create-fraud-detection",
             body: "*",
         };
     };
 
     rpc UpdateFraudDetectionRule(UpdateFraudDetectionRuleCommand) returns (google.protobuf.Empty){
         option (google.api.http) = {
-            post: "/fraud-detections/{customer_id}/rule",
+            post: "/fraud-detection/update-fraud-detection",
             body: "*",
         };
     };
     
     rpc AddTransaction(AddTransactionCommand) returns (ScoredTransactionState) {
         option (google.api.http) = {
-            post: "/fraud-detections/{customer_id}/transaction",
+            post: "/fraud-detection/add-transaction",
             body: "*",
         };
     };
 
     rpc GetFraudDetection(GetFraudDetectionCommand) returns (FraudDetectionState) {
         option (google.api.http) = {
-            get: "/fraud-detections/{customer_id}"
+            get: "/fraud-detection/{customer_id}"
         };
     };
 }

@@ -1,1 +1,3 @@
-cloudstate==0.1.1
+./cloudstate-0.1.2-py3-none-any.whl
+#cloudstate==0.1.2
+#cloudstate==0.1.1

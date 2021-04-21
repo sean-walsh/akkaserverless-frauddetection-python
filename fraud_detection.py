@@ -9,4 +9,5 @@ import logging
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
+    logging.debug("fraud_detection:main")
     CloudState().register_event_sourced_entity(fraud_detection_entity).start()

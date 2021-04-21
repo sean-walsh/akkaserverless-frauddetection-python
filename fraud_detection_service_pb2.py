@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1d\x66raud_detection_service.proto\x12\x0e\x66rauddetection\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1b\x63loudstate/entity_key.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1c\x66raud_detection_common.proto\"c\n\x1b\x43reateFraudDetectionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x18\n\x10max_amount_cents\x18\x03 \x01(\x05\"s\n\x15\x41\x64\x64TransactionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x16\n\x0etransaction_id\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x14\n\x0c\x61mount_cents\x18\x04 \x01(\x05\"5\n\x18GetFraudDetectionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\"g\n\x1fUpdateFraudDetectionRuleCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x18\n\x10max_amount_cents\x18\x03 \x01(\x05\x32\xe0\x04\n\x15\x46raudDetectionService\x12\x87\x01\n\x14\x43reateFraudDetection\x12+.frauddetection.CreateFraudDetectionCommand\x1a\x16.google.protobuf.Empty\"*\x82\xd3\xe4\x93\x02$\"\x1f/fraud-detections/{customer_id}:\x01*\x12\x94\x01\n\x18UpdateFraudDetectionRule\x12/.frauddetection.UpdateFraudDetectionRuleCommand\x1a\x16.google.protobuf.Empty\"/\x82\xd3\xe4\x93\x02)\"$/fraud-detections/{customer_id}/rule:\x01*\x12\x97\x01\n\x0e\x41\x64\x64Transaction\x12%.frauddetection.AddTransactionCommand\x1a&.frauddetection.ScoredTransactionState\"6\x82\xd3\xe4\x93\x02\x30\"+/fraud-detections/{customer_id}/transaction:\x01*\x12\x8b\x01\n\x11GetFraudDetection\x12(.frauddetection.GetFraudDetectionCommand\x1a#.frauddetection.FraudDetectionState\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/fraud-detections/{customer_id}b\x06proto3'
+  serialized_pb=b'\n\x1d\x66raud_detection_service.proto\x12\x0e\x66rauddetection\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1b\x63loudstate/entity_key.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1c\x66raud_detection_common.proto\"c\n\x1b\x43reateFraudDetectionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x18\n\x10max_amount_cents\x18\x03 \x01(\x05\"s\n\x15\x41\x64\x64TransactionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x16\n\x0etransaction_id\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x14\n\x0c\x61mount_cents\x18\x04 \x01(\x05\"5\n\x18GetFraudDetectionCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\"g\n\x1fUpdateFraudDetectionRuleCommand\x12\x19\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x04\x90\xb5\x18\x01\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\x12\x18\n\x10max_amount_cents\x18\x03 \x01(\x05\x32\xdf\x04\n\x15\x46raudDetectionService\x12\x8f\x01\n\x14\x43reateFraudDetection\x12+.frauddetection.CreateFraudDetectionCommand\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\"\'/fraud-detection/create-fraud-detection:\x01*\x12\x97\x01\n\x18UpdateFraudDetectionRule\x12/.frauddetection.UpdateFraudDetectionRuleCommand\x1a\x16.google.protobuf.Empty\"2\x82\xd3\xe4\x93\x02,\"\'/fraud-detection/update-fraud-detection:\x01*\x12\x8c\x01\n\x0e\x41\x64\x64Transaction\x12%.frauddetection.AddTransactionCommand\x1a&.frauddetection.ScoredTransactionState\"+\x82\xd3\xe4\x93\x02%\" /fraud-detection/add-transaction:\x01*\x12\x8a\x01\n\x11GetFraudDetection\x12(.frauddetection.GetFraudDetectionCommand\x1a#.frauddetection.FraudDetectionState\"&\x82\xd3\xe4\x93\x02 \x12\x1e/fraud-detection/{customer_id}b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,cloudstate_dot_entity__key__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,fraud__detection__common__pb2.DESCRIPTOR,])
 
@@ -254,7 +254,7 @@ _FRAUDDETECTIONSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=546,
-  serialized_end=1154,
+  serialized_end=1153,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateFraudDetection',
@@ -263,7 +263,7 @@ _FRAUDDETECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEFRAUDDETECTIONCOMMAND,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002$\"\037/fraud-detections/{customer_id}:\001*',
+    serialized_options=b'\202\323\344\223\002,\"\'/fraud-detection/create-fraud-detection:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -273,7 +273,7 @@ _FRAUDDETECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEFRAUDDETECTIONRULECOMMAND,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002)\"$/fraud-detections/{customer_id}/rule:\001*',
+    serialized_options=b'\202\323\344\223\002,\"\'/fraud-detection/update-fraud-detection:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -283,7 +283,7 @@ _FRAUDDETECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ADDTRANSACTIONCOMMAND,
     output_type=fraud__detection__common__pb2._SCOREDTRANSACTIONSTATE,
-    serialized_options=b'\202\323\344\223\0020\"+/fraud-detections/{customer_id}/transaction:\001*',
+    serialized_options=b'\202\323\344\223\002%\" /fraud-detection/add-transaction:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -293,7 +293,7 @@ _FRAUDDETECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETFRAUDDETECTIONCOMMAND,
     output_type=fraud__detection__common__pb2._FRAUDDETECTIONSTATE,
-    serialized_options=b'\202\323\344\223\002!\022\037/fraud-detections/{customer_id}',
+    serialized_options=b'\202\323\344\223\002 \022\036/fraud-detection/{customer_id}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

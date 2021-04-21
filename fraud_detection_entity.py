@@ -3,6 +3,7 @@ Copyright 2021 Lightbend Inc.
 Licensed under the Apache License, Version 2.0.
 """
 
+import logging
 from dataclasses import dataclass
 
 from google.protobuf.empty_pb2 import Empty
@@ -27,7 +28,8 @@ class FraudDetectionState:
 
 
 def init(entity_id: str) -> FraudDetectionState:
-    return FraudDetectionState(entity_id, [])
+    logging.debug('entity:init')
+    return FraudDetectionState(entity_id, False, "", 0, [])
 
 
 entity = EventSourcedEntity(_FRAUDDETECTIONSERVICE, [FILE_DESCRIPTOR], init)
